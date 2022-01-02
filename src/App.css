@@ -1,0 +1,287 @@
+/*================ App style ======================*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*================= Navbar style =================== */
+.navbar{
+    position: fixed;
+    height: 12vh;
+    width: 100%;
+    background:#1f2542;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    box-shadow:1px 2px 10px #111425;
+    z-index: 10;
+}
+
+.links ul{
+    list-style: none;
+    display: flex;
+    width:490px;
+    justify-content: space-between;
+    padding:30px;
+}
+
+.links ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/*=================== Hero style ====================*/
+.scene{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#111425,#3751e0);
+    background-attachment: fixed;
+    overflow: hidden;
+    z-index: -10; 
+}
+
+.moon{
+    position: relative;
+    top: 14vh;
+    left: 20vw;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: -3;
+}
+
+.moon::after{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(#111425,#3751e0);
+    background-attachment: fixed;
+}
+
+.forest{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    transform: scale(1.17);
+}
+
+.intro{
+    display: flex;
+    height: 40%;
+    justify-content: center;
+    align-items:center; 
+    flex-direction: column;
+    color: #bac0e5;
+    font-size: .8em;
+}
+
+/*=================== About style ===================*/
+.aboutContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#7680b9,#0b22a3);
+}
+.card{
+    position: relative;
+    width:800px;
+    height:400px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    transition:  0.5s;
+}
+
+.card .circle{
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+.card .circle::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(#366280,#1b6dd8);
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+
+}
+.card:hover .circle::before{
+    background: linear-gradient(#111425,#3751e0);
+    clip-path: circle(700px at center);
+}
+
+.card img{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    border-radius:20px;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.card:hover img{
+    left: 77%;
+    height: 450px;
+}
+
+.card .content{
+    position: relative;
+    width: 55%;
+    left: 20%;
+    padding:20px 20px 20px 40px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.card:hover .content{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.card .content h1{
+    color: #fff;
+    text-transform: uppercase;
+    font-size:2em;
+    line-height:1em;
+    margin-bottom:10px;
+}
+
+.card .content p{
+    color: #fff;
+}
+ .card .content a{
+     position: relative;
+     color:#fff;
+     padding:10px 20px;
+     border-radius:10px;
+     background: #fff;
+     color:#111;
+     margin-top:10px;
+     display: inline-block;
+     text-decoration: none;
+ }
+
+ @media (max-width: 991px)
+ {
+     .card{
+         width: auto;
+         max-width: 350px;
+         align-items: flex-start;
+     }
+     .card:hover{
+         height:550px;
+     }
+     .card .content{
+         width:100%;
+         left: 0;
+         padding: 30px;
+     }
+     .card:hover img{
+         top: 70%;
+         left:50%;
+         height:300px;
+     }
+ }
+
+ @media (max-width: 420px)
+{
+    .card .content{
+        padding: 20px;
+    }
+}
+
+
+
+/*=================== Skills style ==================*/
+.skillsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#7680b9,#0b22a3);
+}
+
+.skillsCard{
+    position: relative;
+    width:1000px;
+    height:500px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    transition:  0.5s;
+    background: linear-gradient(#dddde6,#f5f6fa);
+}
+
+.skillsCard input{
+    width: 80%;
+    pointer-events: none;
+}
+.headingSkill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    width: 100%;
+}
+
+.skill{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+    width: 100%;
+}
+
+
+/*=================== Contact style =================*/
+.contactContainer{
+    position: relative;
+    top: 12vh;
+    height: 100vh;
+    width: 100%;
+}
+
+/*=================== Footer style ==================*/
+.footerContainer{
+    position: relative;
+    top: 0;
+    height: 20vh;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.links a{
+    color:white;
+    text-decoration:none;
+    padding: 0 10px;
+}
+
